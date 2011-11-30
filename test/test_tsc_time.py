@@ -23,21 +23,22 @@
 __version__ = '$Revision: #2 $'
 
 import struct
-import sysctl
+#import sysctl
 import time
 import unittest
 from aplib import tsc_time
 
 class Test(unittest.TestCase):
 
-    def test_ticks_per_sec(self):
-        freq = struct.unpack('I', sysctl.sysctl('machdep.tsc_freq'))[0]
-        self.assertEqual(freq,
-                         tsc_time.ticks_per_sec
-                        )
-        self.assertEqual(freq / 1000000,
-                         tsc_time.ticks_per_usec
-                        )
+    # Stub test until we have a working sysctl
+    #def test_ticks_per_sec(self):
+    #    freq = struct.unpack('I', sysctl.sysctl('machdep.tsc_freq'))[0]
+    #    self.assertEqual(freq,
+    #                     tsc_time.ticks_per_sec
+    #                    )
+    #    self.assertEqual(freq / 1000000,
+    #                     tsc_time.ticks_per_usec
+    #                    )
 
     def _assert_close(self, a, b, diff):
         low = a - diff
@@ -303,7 +304,7 @@ class Test(unittest.TestCase):
                           )
 
         # Microseconds in 1 year.
-        diff = 365 * 24 * 60 * 60 * 1000000
+        diff = long(365 * 24 * 60 * 60 * 1000000)
         now_usec = tsc_time.now_posix_usec()
         ago = now_usec - diff
 

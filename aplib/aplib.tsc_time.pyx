@@ -236,18 +236,25 @@ cdef uint64_t get_ticks_per_sec() except -1:
     cdef char buffer[128]
     cdef size_t buffer_size
 
+    # XXX - Need to find a way to get ticks per sec on Linux, fake it for now
     IF UNAME_SYSNAME == "Linux":
         return 2793008320
 
     buffer_size = sizeof(buffer)
 
-    if sysctlbyname("machdep.tsc_freq_new", <void *>&buffer[0], &buffer_size, NULL, 0) == -1:
-        if sysctlbyname("machdep.tsc_freq", <void *>&buffer[0], &buffer_size, NULL, 0) == -1:
-            # Not all systems have this sysctl that we can build on
-            if libc.getenv("BUILDING") == NULL:
-                raise SystemError
-            else:
-                return 2793008320
+    IF UNAME_SYSNAME == "Darwin":
+        if sysctlbyname("machdep.tsc.frequency", <void *>&buffer[0], &buffer_size, NULL, 0) == -1:
+            raise SystemError
+    ELSE:
+        # Leave this for backwards compatibility with 32/64-bit legacy systems
+        if sysctlbyname("machdep.tsc_freq_new", <void *>&buffer[0], &buffer_size, NULL, 0) == -1:
+            if sysctlbyname("machdep.tsc_freq", <void *>&buffer[0], &buffer_size, NULL, 0) == -1:
+                # Not all systems have this sysctl that we can build on
+                if libc.getenv("BUILDING") == NULL:
+                    raise SystemError
+                else:
+                    return 2793008320
+
     if buffer_size == 4:
         value = (<uint32_t *>buffer)[0];
     else:
