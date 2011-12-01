@@ -1,0 +1,7 @@
+This directory contains the "aplib" python package.  It contains a collection
+of random, generic modules.  The general criteria for a module being included
+here is that it is too small to justify tracking it as a separate component,
+and it is shared between different groups/products.
+
+These modules were developed at IronPort Systems and have been provided by
+Cisco Systems under an MIT license.

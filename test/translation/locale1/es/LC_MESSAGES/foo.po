@@ -1,0 +1,33 @@
+# $Header: $
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2009-01-26 17:22+PST\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+msgid "test"
+msgstr "Español"
+
+msgid "test1"
+msgstr "burrito"
+
+msgid "test2"
+msgstr "quesadilla"
+
+msgid "test3"
+msgstr "taco"
+
+msgid "test4"
+msgstr "paella"
+
+msgid "test5"
+msgstr ""
+
+msgid "test %(arg1)s %(arg2)s"
+msgstr "chalupa %(arg2)s %(arg1)s"

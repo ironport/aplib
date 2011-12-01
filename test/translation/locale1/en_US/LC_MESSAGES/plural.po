@@ -1,0 +1,28 @@
+# $Header: $
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2009-01-26 17:22+PST\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgid "a"
+msgid_plural "as"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "b"
+msgid_plural "bs"
+msgstr[0] "b"
+msgstr[1] "bs"
+
+msgid "c"
+msgid_plural "cs"
+msgstr[0] ""
+msgstr[1] ""
