@@ -29,14 +29,11 @@ def CythonExtension(*args, **kwargs):
 setup (
     name='aplib',
     version='1.0.0-000',
-    packages=['aplib', 'aplib/net'],
+    packages=['aplib', 'aplib/net', 'aplib/tsc_time'],
     ext_modules=[
         # Please keep this list alphabetized.
         CythonExtension ('aplib.net._net', ['aplib/net/aplib.net._net.pyx']),
         CythonExtension ('aplib.oserrors', ['aplib/aplib.oserrors.pyx']),
-        CythonExtension ('aplib.tsc_time', ['aplib/aplib.tsc_time.pyx'],
-                        depends=['./include/rdtsc.h'],
-                        ),
     ],
     cmdclass={'build_ext': build_ext},
 )

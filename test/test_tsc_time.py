@@ -20,6 +20,9 @@
 
 """Unittests for the tsc_time module."""
 
+# tsc_time moved from aplib to coro so this now tests the backwards
+# compatible interface which maps it back into aplib.
+
 __version__ = '$Revision: #2 $'
 
 import struct
