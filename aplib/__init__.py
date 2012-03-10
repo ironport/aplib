@@ -18,4 +18,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from make_socket_for_ip import make_socket_for_ip
+# Wrap this in case coro has not been installed
+try:
+    from make_socket_for_ip import make_socket_for_ip
+except ImportError:
+    def make_socket_for_ip(ip, stype=None):
+        raise NotImplementedError
